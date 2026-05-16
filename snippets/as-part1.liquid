@@ -1,0 +1,559 @@
+﻿
+<div class="grid-bg"></div>
+<canvas id="particles"></canvas>
+
+<!-- TOAST -->
+<div class="as-toast" id="as-toast">
+  <span class="as-toast-icon">⚡</span>
+  <span id="as-toast-msg">¡Producto añadido!</span>
+</div>
+
+<!-- ══════════════ PRODUCT MODALS ══════════════ -->
+
+<!-- OVERLAY (shared) -->
+<div class="pm-overlay" id="pm-overlay" onclick="pmClose()"></div>
+
+<!-- ── MODAL: Vortex One ── -->
+<div class="pm-modal" id="pm-Vortex One">
+  <div class="pm-header">
+    <div class="pm-header-left">
+      <div>
+        <div class="pm-brand">Alpha Synkro</div>
+        <div class="pm-title">Vortex One Pool Cleaner</div>
+      </div>
+    </div>
+    <button class="pm-close" onclick="pmClose()">✕</button>
+  </div>
+  <div class="pm-body">
+    <!-- Gallery -->
+    <div class="pm-gallery">
+      <img class="pm-gallery-main" id="pm-Vortex One-main" src="{{ 'pc01.jpg' | asset_url }}" alt="Vortex One">
+      <div class="pm-thumbs">
+        <img class="pm-thumb active" src="{{ 'pc01.jpg' | asset_url }}"       onclick="pmThumb(this,'pm-Vortex One-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'tbpc02_b1.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Vortex One-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'tbpc02_b2.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Vortex One-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'tbpc02_2.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Vortex One-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'tbpc02_3.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Vortex One-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'tbpc02_4.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Vortex One-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'tbpc02_5.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Vortex One-main')" alt="">
+      </div>
+    </div>
+    <!-- Content -->
+    <div class="pm-content">
+      <div class="pm-tagline">// COMPACTO · INALÁMBRICO · IP68</div>
+      <div class="pm-headline">Potencia sin igual para<br>piscinas pequeñas</div>
+      <div class="pm-intro">El Vortex One entrega una succión excepcional con doble motor de cepillos de 36W. Elimina sin esfuerzo suciedad, arena, hojas y residuos incrustados del suelo. Perfecto para piscinas enterradas y elevadas hasta 60m² — piscina impecable con mínimo esfuerzo.</div>
+
+      <div class="pm-feature">
+        <img class="pm-feature-img" src="{{ 'tbpc02_b1.jpg' | asset_url }}" alt="Limpieza potente">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">01 / USP</div>
+          <div class="pm-feat-title">Doble motor de cepillos 36W</div>
+          <div class="pm-feat-desc">Dos motores de cepillo de alto rendimiento trabajan en tándem para arrancar suciedad, arena y residuos incrustados del suelo de la piscina. Eficacia 10× superior a los limpiadores manuales tradicionales.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">36W</span><span class="pm-feat-pill">2 motores</span><span class="pm-feat-pill">Suelo</span></div>
+        </div>
+      </div>
+
+      <div class="pm-feature reverse">
+        <img class="pm-feature-img" src="{{ 'tbpc02_3.jpg' | asset_url }}" alt="Cesta 1.3L">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">02 / USP</div>
+          <div class="pm-feat-title">Cesta 1.3L · Filtro 250 micrones</div>
+          <div class="pm-feat-desc">La cesta de residuos de 1.3L captura partículas de hasta 250 micrones, manteniendo el agua cristalina. Su capacidad moderada reduce la necesidad de vaciados frecuentes. El diseño de extracción trasera hace la limpieza rápida y sin complicaciones.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">1.3L</span><span class="pm-feat-pill">250µm</span><span class="pm-feat-pill">Extracción trasera</span></div>
+        </div>
+      </div>
+
+      <div class="pm-feature">
+        <img class="pm-feature-img" src="{{ 'tbpc02_b2.jpg' | asset_url }}" alt="Batería 5000mAh">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">03 / USP</div>
+          <div class="pm-feat-title">Batería 5000mAh · 120 minutos</div>
+          <div class="pm-feat-desc">Con una batería de alta capacidad de 5000mAh, el Vortex One ofrece hasta 120 minutos de limpieza continua cubriendo hasta 60m². Al terminar o con batería baja, aparca automáticamente en el borde de la piscina para facilitar su extracción con el gancho incluido.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">5000mAh</span><span class="pm-feat-pill">120 min</span><span class="pm-feat-pill">Auto-aparcamiento</span></div>
+        </div>
+      </div>
+
+      <div class="pm-feature reverse">
+        <img class="pm-feature-img" src="{{ 'tbpc02_4.jpg' | asset_url }}" alt="Sin cable IP68">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">04 / USP</div>
+          <div class="pm-feat-title">Sin cable · IP68 · Sensor Hall</div>
+          <div class="pm-feat-desc">Olvídate de mangueras enredadas y cables peligrosos. El diseño inalámbrico con certificación IP68 garantiza seguridad total. Funciona en un rango de temperatura de 10°C a 35°C. El sensor Hall avanzado detecta si el robot se ha detenido, más fiable que los sensores de la competencia.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">IP68</span><span class="pm-feat-pill">Sin cable</span><span class="pm-feat-pill">Sensor Hall</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs -->
+    <div class="pm-specs">
+      <div class="pm-specs-title">// ESPECIFICACIONES TÉCNICAS</div>
+      <div class="pm-specs-table">
+        <div class="pm-spec-row"><span class="pm-spec-k">Batería</span><span class="pm-spec-v">5000mAh</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Potencia</span><span class="pm-spec-v">36W</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Tiempo de limpieza</span><span class="pm-spec-v">2h (120 min)</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Tiempo de carga</span><span class="pm-spec-v">3.5 – 4h</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Motores</span><span class="pm-spec-v">2 motores de cepillo</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Zona de limpieza</span><span class="pm-spec-v">Suelo de piscina</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Velocidad</span><span class="pm-spec-v">10 – 15 m/min</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Filtro / Cesta</span><span class="pm-spec-v">250µm / 1.3L</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Resistencia al agua</span><span class="pm-spec-v">IP68</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Profundidad piscina</span><span class="pm-spec-v">0.5 – 3m</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Supera obstáculos</span><span class="pm-spec-v">≤ 2cm</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Peso</span><span class="pm-spec-v">3 KG</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Dimensiones</span><span class="pm-spec-v">370 × 270 × 180 mm</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pm-footer">
+    <div class="pm-price-block">
+      <div class="pm-price">€299,00</div>
+      <div class="pm-compare">€399,00</div>
+    </div>
+    <button class="as-btn-primary" onclick="asAddToCartDemo('Vortex One','299.00','img/pc01.jpg',null);pmClose();">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      Añadir al carrito
+    </button>
+  </div>
+</div>
+
+<!-- ── MODAL: Apex Pro ── -->
+<div class="pm-modal" id="pm-Apex Pro">
+  <div class="pm-header">
+    <div class="pm-header-left">
+      <div>
+        <div class="pm-brand">Alpha Synkro</div>
+        <div class="pm-title">Apex Pro · Best Seller</div>
+      </div>
+    </div>
+    <button class="pm-close" onclick="pmClose()">✕</button>
+  </div>
+  <div class="pm-body">
+    <div class="pm-gallery">
+      <img class="pm-gallery-main" id="pm-Apex Pro-main" src="{{ 'pc200.jpg' | asset_url }}" alt="Apex Pro">
+      <div class="pm-thumbs">
+        <img class="pm-thumb active" src="{{ 'pc200.jpg' | asset_url }}"     onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'cp402_b1.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'cp402_b2.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'cp402_2.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'cp402_3.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'cp402_4.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'cp402_5.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
+      </div>
+    </div>
+    <div class="pm-content">
+      <div class="pm-tagline">// SyncNav™ · 4 MOTORES · 150 MIN</div>
+      <div class="pm-headline">Navegación avanzada.<br>Limpieza máxima.</div>
+      <div class="pm-intro">El Apex Pro es el robot más completo de la gama Alpha Synkro. Con 4 motores de alta eficiencia, tecnología SyncNav™ y 10.400mAh de batería, limpia el suelo, las paredes hasta 90° y la línea de flotación en un solo ciclo — sin que tengas que hacer nada.</div>
+
+      <div class="pm-feature">
+        <img class="pm-feature-img" src="{{ 'cp402_b1.jpg' | asset_url }}" alt="Retorno automático">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">01 / USP</div>
+          <div class="pm-feat-title">Retorno automático a la superficie</div>
+          <div class="pm-feat-desc">Al completar la limpieza, con batería baja o al llamarlo manualmente, el Apex Pro sube por la pared hasta la línea de flotación. Fácil de recuperar para cualquier persona, especialmente en escenarios de limpieza autónoma sin vigilancia.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">Auto-recall</span><span class="pm-feat-pill">Detección agua</span><span class="pm-feat-pill">App</span></div>
+        </div>
+      </div>
+
+      <div class="pm-feature reverse">
+        <img class="pm-feature-img" src="{{ 'cp402_2.jpg' | asset_url }}" alt="4 motores potentes">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">02 / USP</div>
+          <div class="pm-feat-title">4 motores · Succión potente</div>
+          <div class="pm-feat-desc">Equipado con 4 motores de alta eficiencia (2 de tracción + 2 de bomba de agua) y 4 cepillos PVC de gran adherencia. Elimina hojas, arena, barro y residuos de todos los tipos de piscina. Eficiencia 10× superior al equipamiento tradicional.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">4 motores</span><span class="pm-feat-pill">4 cepillos PVC</span><span class="pm-feat-pill">10× eficiencia</span></div>
+        </div>
+      </div>
+
+      <div class="pm-feature">
+        <img class="pm-feature-img" src="{{ 'cp402_3.jpg' | asset_url }}" alt="Limpieza completa">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">03 / USP</div>
+          <div class="pm-feat-title">Limpieza 360° — suelo, paredes y flotación</div>
+          <div class="pm-feat-desc">El Apex Pro escala paredes hasta 90° de ángulo. En modo automático, comienza por las paredes y termina con el suelo en zigzag. Detección de entrada/salida al agua, detección de colisiones y sensor ultrasónico identifican la línea de flotación con precisión.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">Suelo</span><span class="pm-feat-pill">Paredes 90°</span><span class="pm-feat-pill">Línea flotación</span></div>
+        </div>
+      </div>
+
+      <div class="pm-feature reverse">
+        <img class="pm-feature-img" src="{{ 'cp402_4.jpg' | asset_url }}" alt="Batería 10400mAh">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">04 / USP</div>
+          <div class="pm-feat-title">10.400mAh · 150 min · SyncNav™</div>
+          <div class="pm-feat-desc">Batería de 10.400mAh con hasta 150 minutos de autonomía y carga rápida en ~2 horas. Diseñado para piscinas enterradas de hasta 300m² y profundidades de 3m. SyncNav™ integra chips de posicionamiento, sensores y algoritmos para la ruta de limpieza más eficiente.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">10.400mAh</span><span class="pm-feat-pill">150 min</span><span class="pm-feat-pill">SyncNav™</span></div>
+        </div>
+      </div>
+
+      <div class="pm-feature">
+        <img class="pm-feature-img" src="{{ 'cp402_5.jpg' | asset_url }}" alt="Filtro 4L IP68">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">05 / USP</div>
+          <div class="pm-feat-title">Filtro 4L de carga superior · IP68</div>
+          <div class="pm-feat-desc">El cartucho filtrante de 4L de gran capacidad captura y retiene hojas, ramas, hierba, polvo y grava. Para limpiarlo, abre la tapa trasera, extrae la cesta y aclárala con una manguera. Sin cables, sin riesgo de vuelco. Opera de 5°C a 35°C con nueva interfaz de carga de seguridad mejorada.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">4L filtro</span><span class="pm-feat-pill">IP68</span><span class="pm-feat-pill">5°C – 35°C</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pm-specs">
+      <div class="pm-specs-title">// ESPECIFICACIONES TÉCNICAS</div>
+      <div class="pm-specs-table">
+        <div class="pm-spec-row"><span class="pm-spec-k">Batería</span><span class="pm-spec-v">10.400mAh · 262Wh</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Tiempo de limpieza</span><span class="pm-spec-v">2.5h (150 min)</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Tiempo de carga</span><span class="pm-spec-v">~2h (carga rápida)</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Motores</span><span class="pm-spec-v">4 (2 tracción + 2 bomba)</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Cepillos</span><span class="pm-spec-v">4 cepillos PVC (delantera + trasera)</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Zona de limpieza</span><span class="pm-spec-v">Suelo + Paredes + Flotación</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Velocidad</span><span class="pm-spec-v">15 m/min</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Capacidad filtro</span><span class="pm-spec-v">4L · carga superior</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Resistencia al agua</span><span class="pm-spec-v">IP68</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Supera obstáculos</span><span class="pm-spec-v">≤ 4.5 cm</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Evasión inteligente</span><span class="pm-spec-v">Sí (ultrasónico)</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Aparcamiento automático</span><span class="pm-spec-v">Flotación o borde</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Superficies compatibles</span><span class="pm-spec-v">PVC, baldosa, mosaico, vidrio, hormigón, fibra</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Peso</span><span class="pm-spec-v">11.8 KG</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Dimensiones</span><span class="pm-spec-v">477 × 419 × 278 mm</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pm-footer">
+    <div class="pm-price-block">
+      <div class="pm-price">€449,00</div>
+      <div class="pm-compare">€599,00</div>
+    </div>
+    <button class="as-btn-primary" onclick="asAddToCartDemo('Apex Pro','449.00','img/pc200.jpg',null);pmClose();">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      Añadir al carrito
+    </button>
+  </div>
+</div>
+
+<!-- ── MODAL: Solaris ── -->
+<div class="pm-modal" id="pm-Solaris">
+  <div class="pm-header">
+    <div class="pm-header-left">
+      <div>
+        <div class="pm-brand">Alpha Synkro</div>
+        <div class="pm-title">Solaris Surface Skimmer</div>
+      </div>
+    </div>
+    <button class="pm-close" onclick="pmClose()">✕</button>
+  </div>
+  <div class="pm-body">
+    <div class="pm-gallery">
+      <img class="pm-gallery-main" id="pm-Solaris-main" src="{{ 'ps100.png' | asset_url }}" alt="Solaris">
+      <div class="pm-thumbs">
+        <img class="pm-thumb active" src="{{ 'ps100.png' | asset_url }}"    onclick="pmThumb(this,'pm-Solaris-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'qt200_2.png' | asset_url }}"  onclick="pmThumb(this,'pm-Solaris-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'qt200_3.png' | asset_url }}"  onclick="pmThumb(this,'pm-Solaris-main')" alt="">
+      </div>
+    </div>
+    <div class="pm-content">
+      <div class="pm-tagline">// SOLAR · 24/7 · IP8+ · APP</div>
+      <div class="pm-headline">Skimmer solar.<br>Piscina impecable, esfuerzo cero.</div>
+      <div class="pm-intro">El Solaris es el único skimmer robótico que busca activamente la luz solar mientras se mueve, permitiendo una operación genuina 24/7. Hojas, polvo, polen, pelo de mascotas, insectos y residuos flotantes desaparecen solos — sin intervención, sin coste eléctrico.</div>
+
+      <div class="pm-feature">
+        <img class="pm-feature-img" src="{{ 'ps100.png' | asset_url }}" alt="Carga dual solar">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">01 / USP</div>
+          <div class="pm-feat-title">Carga Dual Solar + DC · Siempre listo</div>
+          <div class="pm-feat-desc">El panel solar de alta eficiencia integrado (19.2V / 16W / IP67) con la tecnología SolarSync™ mantiene el Solaris funcionando indefinidamente en días soleados. En días nublados, la carga DC garantiza 20h de autonomía con solo 3h de carga. Materiales resistentes a UV de grado militar.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">Solar 16W</span><span class="pm-feat-pill">20h autonomía</span><span class="pm-feat-pill">Carga 3h</span></div>
+        </div>
+      </div>
+
+      <div class="pm-feature reverse">
+        <img class="pm-feature-img" src="{{ 'qt200_2.png' | asset_url }}" alt="Filtro 6L 180µm">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">02 / USP</div>
+          <div class="pm-feat-title">Filtro ultra-fino 180µm · Cesta 6L</div>
+          <div class="pm-feat-desc">El filtro de precisión de 180µm captura incluso las partículas más pequeñas. La enorme cesta de 6L significa semanas entre vaciados — olvídate del mantenimiento frecuente. Limpieza 24 horas al día, 7 días a la semana, sin intervención.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">180µm</span><span class="pm-feat-pill">6L cesta</span><span class="pm-feat-pill">24/7</span></div>
+        </div>
+      </div>
+
+      <div class="pm-feature">
+        <img class="pm-feature-img" src="{{ 'qt200_3.png' | asset_url }}" alt="App control total">
+        <div class="pm-feature-text">
+          <div class="pm-feat-num">03 / USP</div>
+          <div class="pm-feat-title">Control total por app · Triple motor</div>
+          <div class="pm-feat-desc">Monitoriza el nivel de batería y la temperatura del agua en tiempo real. Elige entre modo en arco o limpieza intensiva de bordes. Control manual remoto para zonas específicas. Triple motor anticorrosión (2 de propulsión + 1 de cepillo rodante) compatible con agua dulce, salada y clorada — sin degradación temporada tras temporada.</div>
+          <div class="pm-feat-pills"><span class="pm-feat-pill">App iOS/Android</span><span class="pm-feat-pill">3 motores</span><span class="pm-feat-pill">Anti-sal/cloro</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pm-specs">
+      <div class="pm-specs-title">// ESPECIFICACIONES TÉCNICAS</div>
+      <div class="pm-specs-table">
+        <div class="pm-spec-row"><span class="pm-spec-k">Panel solar</span><span class="pm-spec-v">19.2V · 0.8A · 16W · IP67</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Batería</span><span class="pm-spec-v">2600mAh · 37.44Wh</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Autonomía (DC)</span><span class="pm-spec-v">20h</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Tiempo de carga</span><span class="pm-spec-v">3h</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Motores</span><span class="pm-spec-v">3 (2 propulsión + 1 cepillo)</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Zona de limpieza</span><span class="pm-spec-v">Superficie del agua</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Velocidad</span><span class="pm-spec-v">7 – 15 m/min</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Filtro</span><span class="pm-spec-v">180µm ultra-fino</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Capacidad cesta</span><span class="pm-spec-v">6L</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Resistencia al agua</span><span class="pm-spec-v">IP8 y superior</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Evasión de obstáculos</span><span class="pm-spec-v">Ultrasónica inteligente</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">App</span><span class="pm-spec-v">iOS y Android</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Material UV</span><span class="pm-spec-v">Grado militar anti-UV</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Compatible con</span><span class="pm-spec-v">Agua dulce, salada, clorada</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Peso</span><span class="pm-spec-v">5.6 KG</span></div>
+        <div class="pm-spec-row"><span class="pm-spec-k">Dimensiones</span><span class="pm-spec-v">590 × 500 × 183 mm</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pm-footer">
+    <div class="pm-price-block">
+      <div class="pm-price">€199,00</div>
+      <div class="pm-compare">€249,00</div>
+    </div>
+    <button class="as-btn-primary" onclick="asAddToCartDemo('Solaris','199.00','img/ps100.png',null);pmClose();">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      Añadir al carrito
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════ CART DRAWER ══════════════ -->
+<div class="as-cart-overlay" id="as-cart-overlay" onclick="asCloseCart()"></div>
+<div class="as-cart-drawer" id="as-cart-drawer">
+  <div class="as-cart-header">
+    <span class="as-cart-title">// CARRITO</span>
+    <button class="as-cart-close" onclick="asCloseCart()">✕</button>
+  </div>
+  <div class="as-cart-items" id="as-cart-items"></div>
+  <div class="as-cart-footer">
+    <div class="as-cart-total-row">
+      <span class="as-cart-total-label">TOTAL</span>
+      <span class="as-cart-total-num" id="as-cart-total">€0.00</span>
+    </div>
+    <button class="as-btn-primary" style="width:100%;justify-content:center;" onclick="asGoCheckout()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      PAGAR AHORA →
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="as-nav">
+  <div class="as-nav-inner">
+    <a href="#" onclick="showPage('home');return false;" class="as-logo">
+      <img src="{{ 'logo.png' | asset_url }}" alt="Alpha Synkro" style="height:42px;width:auto;object-fit:contain;">
+    </a>
+    <ul class="as-nav-links">
+      <li><a href="#" data-page="home" onclick="showPage('home');return false;">Inicio</a></li>
+      <li><a href="#" data-page="robots" onclick="showPage('robots');return false;">Robots</a></li>
+      <li><a href="#" onclick="showPage('home');setTimeout(()=>document.getElementById('as-flash').scrollIntoView({behavior:'smooth'}),80);return false;">Ofertas</a></li>
+      <li><a href="#" onclick="showPage('home');setTimeout(()=>document.getElementById('as-audience').scrollIntoView({behavior:'smooth'}),80);return false;">Nosotros</a></li>
+    </ul>
+    <div class="as-nav-actions">
+      <div class="as-search-wrap">
+        <button class="as-icon-btn" onclick="asToggleSearch()">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <input type="text" id="as-search" placeholder="Buscar productos..." onkeyup="asSearch(this.value)">
+      </div>
+      <button class="as-icon-btn as-cart-btn" onclick="asOpenCart()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="as-cart-badge" id="as-cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="page-home">
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="as-hero" id="as-hero">
+  <div class="as-hero-bg"></div>
+  <div class="as-hero-content">
+    <div>
+      <div class="as-tag">// ROBOTS · PISCINAS · TECNOLOGÍA</div>
+      <h1>El Futuro de<br><span>tu Piscina</span></h1>
+      <p>Robots limpiadores Alpha Synkro — limpieza autónoma, inteligente y sin esfuerzo. Descansa mientras el robot trabaja.</p>
+      <div class="as-hero-btns">
+        <a href="#" onclick="showPage('robots');return false;" class="as-btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Ver Robots
+        </a>
+        <a href="#" onclick="showPage('robots');return false;" class="as-btn-outline">Comparar Modelos</a>
+      </div>
+    </div>
+    <div class="as-visual">
+      <div class="as-hero-img-wrap">
+        <img src="{{ 'tbpc02_b1.jpg' | asset_url }}" alt="Robot limpiador de piscina Alpha Synkro">
+        <div class="as-hero-img-scan"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="as-stats">
+  <div class="as-stats-inner">
+    <div class="as-stat"><div class="as-stat-num">3</div><div class="as-stat-label">Modelos Disponibles</div></div>
+    <div class="as-stat"><div class="as-stat-num">IP68</div><div class="as-stat-label">Resistencia al Agua</div></div>
+    <div class="as-stat"><div class="as-stat-num">150min</div><div class="as-stat-label">Autonomía Máx.</div></div>
+    <div class="as-stat"><div class="as-stat-num">300m²</div><div class="as-stat-label">Cobertura Máx.</div></div>
+  </div>
+</div>
+
+<!-- FLASH -->
+<div class="as-flash" id="as-flash">
+  <div class="as-flash-tag">⚡ FLASH SALE — ALPHA SYNKRO EDITION</div>
+  <div class="as-flash-title">Oferta por Tiempo Limitado</div>
+  <div class="as-flash-sub">Tecnología robótica Alpha Synkro al mejor precio del año</div>
+  <div class="as-countdown">
+    <div class="as-cd-block"><div class="as-cd-num" id="as-cd-d">02</div><div class="as-cd-label">DÍAS</div></div>
+    <div class="as-cd-block"><div class="as-cd-num" id="as-cd-h">18</div><div class="as-cd-label">HRS</div></div>
+    <div class="as-cd-block"><div class="as-cd-num" id="as-cd-m">00</div><div class="as-cd-label">MIN</div></div>
+    <div class="as-cd-block"><div class="as-cd-num" id="as-cd-s">00</div><div class="as-cd-label">SEG</div></div>
+  </div>
+  <a href="#" onclick="showPage('robots');return false;" class="as-btn-primary">Ver Oferta →</a>
+</div>
+
+
+<!-- FEATURES -->
+<section class="as-section as-features">
+  <div class="as-features-inner">
+    <div class="as-section-header">
+      <span class="as-section-tag">// TECNOLOGÍA</span>
+      <h2 class="as-section-title">¿Por qué <span>Alpha Synkro</span>?</h2>
+    </div>
+    <div class="as-features-grid">
+      <div class="as-feat-card">
+        <div class="as-feat-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F5FF" stroke-width="2"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="as-feat-title">Limpieza Autónoma</div>
+        <p class="as-feat-desc">SyncNav™ traza la ruta óptima automáticamente. Evita obstáculos, sube paredes y regresa al borde al terminar.</p>
+      </div>
+      <div class="as-feat-card">
+        <div class="as-feat-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F5FF" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18" stroke-width="3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="as-feat-title">Control por App</div>
+        <p class="as-feat-desc">Wi-Fi y BLE integrados. Programa ciclos, elige modos y monitoriza la temperatura del agua desde el móvil.</p>
+      </div>
+      <div class="as-feat-card">
+        <div class="as-feat-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F5FF" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="as-feat-title">IP68 + 2 Años Garantía</div>
+        <p class="as-feat-desc">Resistencia total al agua. Materiales anti-sal, cloro y UV. Respaldado por tecnología de vanguardia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE / NOSOTROS -->
+<section class="as-section as-audience" id="as-audience">
+  <div class="as-audience-inner">
+    <div>
+      <span class="as-section-tag">// NUESTRA HISTORIA</span>
+      <h2 class="as-section-title" style="text-align:left">¿Quiénes somos y por qué <span>Alpha Synkro</span>?</h2>
+      <p style="color:var(--text-dim);margin-top:1rem;font-size:.9rem;line-height:1.8">Alpha Synkro nació de una frustración muy concreta: pasar horas cada semana limpiando la piscina cuando debería ser tiempo de disfrutarla. Somos un equipo de apasionados de la tecnología y el bienestar que decidimos que tenía que haber una solución mejor.</p>
+      <p style="color:var(--text-dim);margin-top:.8rem;font-size:.9rem;line-height:1.8">Tras meses investigando el mercado, encontramos en <strong style="color:var(--text)">Alpha Synkro</strong> — respaldada por tecnología de vanguardia, una de las empresas de robótica más avanzadas del mundo — la tecnología que buscábamos. Nos convertimos en distribuidores oficiales en España con un objetivo claro: acercar la robótica de piscina de alto rendimiento a todos los propietarios, a precios justos y con soporte real en español.</p>
+      <ul class="as-benefits" style="margin-top:1.5rem;">
+        <li><span class="as-b-icon">🎯</span><div class="as-b-text"><h4>Selección rigurosa de productos</h4><p>Solo comercializamos los modelos que hemos probado y en los que confiamos. Sin relleno, sin compromiso.</p></div></li>
+        <li><span class="as-b-icon">🇪🇸</span><div class="as-b-text"><h4>Soporte en español, desde España</h4><p>Nuestro equipo atiende en tu idioma. Garantía de 2 años gestionada localmente, sin trámites internacionales.</p></div></li>
+        <li><span class="as-b-icon">🔬</span><div class="as-b-text"><h4>Tecnología respaldada por ciencia</h4><p>Alpha Synkro invierte más del 20% de su facturación en I+D. Cada robot es el resultado de años de ingeniería aplicada.</p></div></li>
+        <li><span class="as-b-icon">♻️</span><div class="as-b-text"><h4>Compromiso con la eficiencia</h4><p>Menos química, menos gasto eléctrico, más vida útil de tu piscina. Tecnología que cuida tu bolsillo y el planeta.</p></div></li>
+      </ul>
+    </div>
+    <div class="as-audience-visual" style="flex-direction:column;gap:1.5rem;padding:2.5rem;">
+      <img src="{{ 'logo.png' | asset_url }}" alt="Alpha Synkro" style="width:160px;object-fit:contain;margin:0 auto;display:block;">
+      <div style="text-align:center;border-top:1px solid rgba(0,245,255,0.1);padding-top:1.5rem;">
+        <div style="font-family:'Orbitron',sans-serif;font-size:.7rem;color:var(--primary);letter-spacing:3px;margin-bottom:1.2rem;">// CIFRAS QUE IMPORTAN</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div style="background:rgba(0,245,255,0.04);border:1px solid rgba(0,245,255,0.1);border-radius:4px;padding:1rem;">
+            <div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:900;color:var(--primary);">+500</div>
+            <div style="font-size:.72rem;color:var(--text-dim);margin-top:.3rem;">Clientes satisfechos</div>
+          </div>
+          <div style="background:rgba(0,245,255,0.04);border:1px solid rgba(0,245,255,0.1);border-radius:4px;padding:1rem;">
+            <div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:900;color:var(--primary);">2 años</div>
+            <div style="font-size:.72rem;color:var(--text-dim);margin-top:.3rem;">Garantía oficial</div>
+          </div>
+          <div style="background:rgba(0,245,255,0.04);border:1px solid rgba(0,245,255,0.1);border-radius:4px;padding:1rem;">
+            <div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:900;color:var(--primary);">48h</div>
+            <div style="font-size:.72rem;color:var(--text-dim);margin-top:.3rem;">Entrega en España</div>
+          </div>
+          <div style="background:rgba(0,245,255,0.04);border:1px solid rgba(0,245,255,0.1);border-radius:4px;padding:1rem;">
+            <div style="font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:900;color:var(--primary);">4.9★</div>
+            <div style="font-size:.72rem;color:var(--text-dim);margin-top:.3rem;">Valoración media</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="as-newsletter">
+  <div class="as-newsletter-inner">
+    <span class="as-section-tag">// NEWSLETTER</span>
+    <h2>Sé el primero en conocer las <span style="color:var(--primary)">novedades</span></h2>
+    <p>Ofertas exclusivas y lanzamientos Alpha Synkro directo a tu email.</p>
+    <div class="as-email-form">
+      <input type="email" placeholder="tu@email.com">
+      <button class="as-btn-primary" onclick="asShowToast('¡Suscripción registrada!')">Suscribirse</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="as-footer">
+  <div class="as-footer-inner">
+    <div class="as-footer-grid">
+      <div>
+        <div class="as-logo">
+          <img src="{{ 'logo.png' | asset_url }}" alt="Alpha Synkro" style="height:48px;width:auto;object-fit:contain;filter:brightness(1);">
+        </div>
+        <p class="as-footer-desc">Distribuidor oficial Alpha Synkro en España. Robots limpiadores de piscinas respaldados por tecnología de vanguardia.</p>
+        <div class="as-social">
+          <a href="#" class="as-social-btn">FB</a>
+          <a href="#" class="as-social-btn">IG</a>
+          <a href="#" class="as-social-btn">YT</a>
+          <a href="#" class="as-social-btn">TW</a>
+        </div>
+      </div>
+      <div class="as-footer-col">
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="#" onclick="pmOpen('pm-Vortex One');return false;">Vortex One</a></li>
+          <li><a href="#" onclick="pmOpen('pm-Apex Pro');return false;">Apex Pro</a></li>
+          <li><a href="#" onclick="pmOpen('pm-Solaris');return false;">Solaris</a></li>
+          <li><a href="#as-flash">Ofertas Flash</a></li>
+        </ul>
+      </div>
+      <div class="as-footer-col">
+        <h4>Soporte</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Envíos</a></li>
+          <li><a href="#">Garantía 2 años</a></li>
+          <li><a href="https://www.air-robo.com/" target="_blank">Alpha Synkro.com</a></li>
+        </ul>
+      </div>
+      <div class="as-footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('privacidad');return false;">Privacidad</a></li>
+          <li><a href="#" onclick="showPage('terminos');return false;">Términos</a></li>
+          <li><a href="#" onclick="showPage('aviso-legal');return false;">Aviso Legal</a></li>
+          <li><a href="#" onclick="showPage('home');return false;">Alpha Synkro</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="as-footer-bottom">
+      <span class="as-footer-copy">© 2026 <a href="#">Alpha Synkro</a>. Todos los derechos reservados.</span>
+      <span style="color:var(--text-dim);font-size:.7rem;font-family:'Space Mono',monospace">Vortex One · Apex Pro · Solaris</span>
+    </div>
+  </div>
+</footer>
