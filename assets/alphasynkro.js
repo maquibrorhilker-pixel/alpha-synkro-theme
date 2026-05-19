@@ -80,7 +80,17 @@ function asUpdateCartBadge(){
 function asRenderCart(){
   const list=document.getElementById('as-cart-items');
   const subtotal=asCartItems.reduce((s,i)=>s+i.price*i.qty,0);
-  const total=asPromoDiscount>0 ? subtotal*(1-asPromoDiscount) : subtotal;
+  const saving=asPromoDiscount>0 ? subtotal*asPromoDiscount : 0;
+  const total=subtotal-saving;
+  const savingRow=document.getElementById('as-cart-saving');
+  if(savingRow){
+    if(saving>0){
+      savingRow.style.display='flex';
+      document.getElementById('as-cart-saving-amt').textContent='-€'+saving.toFixed(2);
+    } else {
+      savingRow.style.display='none';
+    }
+  }
   document.getElementById('as-cart-total').textContent='€'+total.toFixed(2);
   if(!asCartItems.length){
     list.innerHTML='<div class="as-cart-empty">Tu carrito está vacío<br><span style="font-size:2rem;opacity:.2;display:block;margin-top:.5rem">🛒</span></div>';
@@ -164,11 +174,7 @@ function showPage(name){
 showPage('home');
 
 // ── PROMO CODE ───────────────────────────────────────────
-const PROMO_CODES = {
-  'SYNKRO10': 0.10,
-  'SYNKRO15': 0.15,
-  'SYNKRO20': 0.20
-};
+const PROMO_CODES = { 'SYNKRO15': 0.15 };
 let asPromoDiscount = 0;
 let asPromoCode = '';
 
@@ -177,6 +183,11 @@ function asApplyPromo(){
   const msg   = document.getElementById('as-promo-msg');
   const code  = input.value.trim().toUpperCase();
   if(!code){ msg.className='as-promo-msg err'; msg.textContent='Introduce un código.'; return; }
+  if(localStorage.getItem('asPromoUsed_'+code)){
+    msg.className='as-promo-msg err';
+    msg.textContent='Este código ya ha sido utilizado.';
+    return;
+  }
   if(PROMO_CODES[code] !== undefined){
     asPromoDiscount = PROMO_CODES[code];
     asPromoCode = code;
@@ -268,6 +279,13 @@ function asPlaceOrder(){
 
 function asOrderComplete(){
   document.getElementById('ck-success-overlay').classList.remove('show');
+  // Mark promo code as used (single-use)
+  if(asPromoCode) localStorage.setItem('asPromoUsed_'+asPromoCode, '1');
+  asPromoDiscount = 0; asPromoCode = '';
+  const pi = document.getElementById('as-promo-input');
+  if(pi){ pi.value=''; pi.disabled=false; }
+  const pm = document.getElementById('as-promo-msg');
+  if(pm){ pm.textContent=''; pm.className='as-promo-msg'; }
   asCartItems = [];
   asUpdateCartBadge();
   asRenderCart();
@@ -285,3 +303,22 @@ document.head.appendChild(_ckStyle);
 
 // Init cart render
 asRenderCart();
+
+// ── COOKIE CONSENT ───────────────────────────────────────
+(function(){
+  if(localStorage.getItem('asCookieConsent')) return;
+  setTimeout(function(){
+    const b = document.getElementById('as-cookie-banner');
+    if(b) b.classList.add('show');
+  }, 800);
+})();
+function asCookieAccept(){
+  localStorage.setItem('asCookieConsent','accepted');
+  const b = document.getElementById('as-cookie-banner');
+  if(b){ b.classList.remove('show'); setTimeout(()=>b.remove(),400); }
+}
+function asCookieReject(){
+  localStorage.setItem('asCookieConsent','rejected');
+  const b = document.getElementById('as-cookie-banner');
+  if(b){ b.classList.remove('show'); setTimeout(()=>b.remove(),400); }
+}
