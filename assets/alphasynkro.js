@@ -1,4 +1,4 @@
-﻿// ── PARTICLES ──────────────────────────────────────────
+// ── PARTICLES ──────────────────────────────────────────
 (()=>{
   const c=document.getElementById('particles'),ctx=c.getContext('2d');
   const resize=()=>{c.width=innerWidth;c.height=innerHeight;};
@@ -56,7 +56,17 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pmClose();});
 // ── CART ────────────────────────────────────────────────
 let asCartItems=[];
 
-function asAddToCartDemo(title,price,img,btn){
+function pmQty(id, delta){
+  const inp = document.getElementById(id);
+  if(!inp) return;
+  let v = (parseInt(inp.value) || 1) + delta;
+  if(v < 1) v = 1;
+  if(v > 99) v = 99;
+  inp.value = v;
+}
+
+function asAddToCartDemo(title,price,img,btn,qty){
+  qty = Math.max(1, parseInt(qty) || 1);
   if(btn){
     const orig=btn.innerHTML;
     btn.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> ¡Añadido!';
@@ -64,8 +74,8 @@ function asAddToCartDemo(title,price,img,btn){
     setTimeout(()=>{btn.innerHTML=orig;btn.style.opacity='';},2000);
   }
   const existing=asCartItems.find(i=>i.title===title);
-  if(existing){existing.qty++;}
-  else{asCartItems.push({title,price:parseFloat(price),qty:1,img});}
+  if(existing){existing.qty+=qty;}
+  else{asCartItems.push({title,price:parseFloat(price),qty,img});}
   asUpdateCartBadge();
   asRenderCart();
   asShowToast('¡'+title+' añadido!');
