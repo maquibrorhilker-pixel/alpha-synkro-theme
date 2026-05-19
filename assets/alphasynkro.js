@@ -79,7 +79,8 @@ function asUpdateCartBadge(){
 
 function asRenderCart(){
   const list=document.getElementById('as-cart-items');
-  const total=asCartItems.reduce((s,i)=>s+i.price*i.qty,0);
+  const subtotal=asCartItems.reduce((s,i)=>s+i.price*i.qty,0);
+  const total=asPromoDiscount>0 ? subtotal*(1-asPromoDiscount) : subtotal;
   document.getElementById('as-cart-total').textContent='€'+total.toFixed(2);
   if(!asCartItems.length){
     list.innerHTML='<div class="as-cart-empty">Tu carrito está vacío<br><span style="font-size:2rem;opacity:.2;display:block;margin-top:.5rem">🛒</span></div>';
@@ -161,6 +162,35 @@ function showPage(name){
   window.scrollTo(0,0);
 }
 showPage('home');
+
+// ── PROMO CODE ───────────────────────────────────────────
+const PROMO_CODES = {
+  'SYNKRO10': 0.10,
+  'SYNKRO15': 0.15,
+  'SYNKRO20': 0.20
+};
+let asPromoDiscount = 0;
+let asPromoCode = '';
+
+function asApplyPromo(){
+  const input = document.getElementById('as-promo-input');
+  const msg   = document.getElementById('as-promo-msg');
+  const code  = input.value.trim().toUpperCase();
+  if(!code){ msg.className='as-promo-msg err'; msg.textContent='Introduce un código.'; return; }
+  if(PROMO_CODES[code] !== undefined){
+    asPromoDiscount = PROMO_CODES[code];
+    asPromoCode = code;
+    msg.className='as-promo-msg ok';
+    msg.textContent='✓ Código aplicado — ' + (asPromoDiscount*100) + '% de descuento';
+    input.disabled = true;
+    asRenderCart();
+  } else {
+    asPromoDiscount = 0;
+    asPromoCode = '';
+    msg.className='as-promo-msg err';
+    msg.textContent='Código no válido.';
+  }
+}
 
 // ── CHECKOUT ─────────────────────────────────────────────
 function asGoCheckout(){
