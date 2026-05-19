@@ -361,7 +361,7 @@
 
     /* ANNOUNCEMENT BAR */
     .as-announcement{background:linear-gradient(90deg,#003344,#001a22,#003344);border-bottom:1px solid rgba(0,245,255,0.2);overflow:hidden;height:36px;display:flex;align-items:center;position:fixed;top:0;left:0;right:0;width:100%;z-index:1001;}
-    .as-announcement-track{display:flex;white-space:nowrap;animation:annScroll 22s linear infinite;}
+    .as-announcement-track{display:flex;white-space:nowrap;animation:annScroll 45s linear infinite;}
     .as-announcement-track:hover{animation-play-state:paused;}
     .as-announcement-track span{padding:0 3rem;font-size:.72rem;font-family:'Orbitron',sans-serif;letter-spacing:1.5px;color:var(--text);text-transform:uppercase;}
     .as-announcement-track span strong{color:var(--primary);}
