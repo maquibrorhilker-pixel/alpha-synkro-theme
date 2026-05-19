@@ -329,6 +329,13 @@
   </div>
   <div class="as-cart-items" id="as-cart-items"></div>
   <div class="as-cart-footer">
+    <div class="as-promo-wrap" id="as-promo-wrap">
+      <div class="as-promo-row">
+        <input type="text" id="as-promo-input" placeholder="Código promocional" class="as-promo-input">
+        <button class="as-promo-btn" onclick="asApplyPromo()">Aplicar</button>
+      </div>
+      <div id="as-promo-msg" class="as-promo-msg"></div>
+    </div>
     <div class="as-cart-total-row">
       <span class="as-cart-total-label">TOTAL</span>
       <span class="as-cart-total-num" id="as-cart-total">€0.00</span>
@@ -349,7 +356,6 @@
     <ul class="as-nav-links">
       <li><a href="#" data-page="home" onclick="showPage('home');return false;">Inicio</a></li>
       <li><a href="#" data-page="robots" onclick="showPage('robots');return false;">Robots</a></li>
-      <li><a href="#" onclick="showPage('home');setTimeout(()=>document.getElementById('as-flash').scrollIntoView({behavior:'smooth'}),80);return false;">Ofertas</a></li>
       <li><a href="#" onclick="showPage('home');setTimeout(()=>document.getElementById('as-audience').scrollIntoView({behavior:'smooth'}),80);return false;">Nosotros</a></li>
     </ul>
     <div class="as-nav-actions">
@@ -518,12 +524,9 @@
         </ul>
       </div>
       <div class="as-footer-col">
-        <h4>Soporte</h4>
+        <h4>Contacto</h4>
         <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Envíos</a></li>
-          <li><a href="#">Garantía 2 años</a></li>
-          <li><a href="https://www.air-robo.com/" target="_blank">Alpha Synkro.com</a></li>
+          <li><a href="mailto:alphasynkro.soporte@gmail.com">alphasynkro.soporte@gmail.com</a></li>
         </ul>
       </div>
       <div class="as-footer-col">
