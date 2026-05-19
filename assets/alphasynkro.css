@@ -1,4 +1,4 @@
-﻿:root{
+:root{
       --primary:#00F5FF;--accent:#0066FF;--bg-dark:#0a0a0f;
       --bg-card:#0f0f1a;--bg-mid:#13131f;--text:#e8e8f0;
       --text-dim:#8888aa;--glow:0 0 20px #00F5FF55;--border:#1a1a2e;
@@ -16,7 +16,7 @@
     #particles{position:fixed;inset:0;pointer-events:none;z-index:0;}
 
     /* NAV */
-    .as-nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,10,15,0.95);
+    .as-nav{position:fixed;top:36px;width:100%;z-index:1000;background:rgba(10,10,15,0.95);
       backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,245,255,0.12);}
     .as-nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;
       height:68px;padding:0 2rem;gap:1.5rem;}
@@ -44,7 +44,7 @@
 
     /* HERO */
     .as-hero{position:relative;min-height:100vh;display:flex;align-items:center;
-      padding:90px 2rem 4rem;z-index:1;overflow:hidden;}
+      padding:126px 2rem 4rem;z-index:1;overflow:hidden;}
     .as-hero-bg{position:absolute;inset:0;
       background:radial-gradient(ellipse at 65% 50%,rgba(0,102,255,0.18)0%,transparent 60%),
       radial-gradient(ellipse at 25% 70%,rgba(0,245,255,0.1)0%,transparent 50%);}
@@ -360,7 +360,7 @@
     .as-cart-total-num{color:var(--primary);font-weight:700;font-size:1.1rem;}
 
     /* ANNOUNCEMENT BAR */
-    .as-announcement{background:linear-gradient(90deg,#003344,#001a22,#003344);border-bottom:1px solid rgba(0,245,255,0.2);overflow:hidden;height:36px;display:flex;align-items:center;position:relative;}
+    .as-announcement{background:linear-gradient(90deg,#003344,#001a22,#003344);border-bottom:1px solid rgba(0,245,255,0.2);overflow:hidden;height:36px;display:flex;align-items:center;position:fixed;top:0;left:0;right:0;width:100%;z-index:1001;}
     .as-announcement-track{display:flex;white-space:nowrap;animation:annScroll 22s linear infinite;}
     .as-announcement-track:hover{animation-play-state:paused;}
     .as-announcement-track span{padding:0 3rem;font-size:.72rem;font-family:'Orbitron',sans-serif;letter-spacing:1.5px;color:var(--text);text-transform:uppercase;}
