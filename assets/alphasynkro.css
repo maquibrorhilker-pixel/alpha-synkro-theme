@@ -359,6 +359,31 @@
     .as-cart-total-label{color:var(--text-dim);}
     .as-cart-total-num{color:var(--primary);font-weight:700;font-size:1.1rem;}
 
+    /* ANNOUNCEMENT BAR */
+    .as-announcement{background:linear-gradient(90deg,#003344,#001a22,#003344);border-bottom:1px solid rgba(0,245,255,0.2);overflow:hidden;height:36px;display:flex;align-items:center;position:relative;}
+    .as-announcement-track{display:flex;white-space:nowrap;animation:annScroll 22s linear infinite;}
+    .as-announcement-track:hover{animation-play-state:paused;}
+    .as-announcement-track span{padding:0 3rem;font-size:.72rem;font-family:'Orbitron',sans-serif;letter-spacing:1.5px;color:var(--text);text-transform:uppercase;}
+    .as-announcement-track span strong{color:var(--primary);}
+    @keyframes annScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* CART SAVING ROW */
+    .as-cart-saving-row{display:none;justify-content:space-between;margin-bottom:.6rem;font-size:.82rem;}
+    .as-cart-saving-label{color:var(--text-dim);}
+    .as-cart-saving-amount{color:#00cc66;font-weight:700;}
+
+    /* COOKIE BANNER */
+    .as-cookie-banner{position:fixed;bottom:-120px;left:0;right:0;background:var(--bg-card);border-top:1px solid var(--border);padding:1rem 1.5rem;z-index:9999;transition:bottom .4s cubic-bezier(.25,.8,.25,1);box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    .as-cookie-banner.show{bottom:0;}
+    .as-cookie-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+    .as-cookie-inner p{margin:0;font-size:.82rem;color:var(--text-dim);flex:1;min-width:220px;line-height:1.6;}
+    .as-cookie-inner p strong{color:var(--text);}
+    .as-cookie-btns{display:flex;gap:.6rem;flex-shrink:0;}
+    .as-cookie-accept{background:var(--primary);color:#000;border:none;border-radius:4px;padding:.5rem 1.3rem;font-size:.78rem;font-family:'Orbitron',sans-serif;letter-spacing:1px;cursor:pointer;font-weight:700;transition:opacity .2s;}
+    .as-cookie-accept:hover{opacity:.85;}
+    .as-cookie-reject{background:transparent;color:var(--text-dim);border:1px solid var(--border);border-radius:4px;padding:.5rem 1.1rem;font-size:.78rem;font-family:'Orbitron',sans-serif;cursor:pointer;transition:border-color .2s,color .2s;}
+    .as-cookie-reject:hover{border-color:var(--text-dim);color:var(--text);}
+
     /* TOAST */
     .as-toast{position:fixed;bottom:2rem;right:2rem;background:var(--bg-card);
       border:1px solid var(--primary);color:var(--text);padding:.9rem 1.4rem;border-radius:4px;
