@@ -1,4 +1,12 @@
 ﻿
+<!-- ANNOUNCEMENT BAR -->
+<div class="as-announcement">
+  <div class="as-announcement-track">
+    <span>🔥 15% de descuento en toda la tienda · Usa el código <strong>SYNKRO15</strong> en tu carrito &nbsp;·&nbsp; 🔥 15% de descuento en toda la tienda · Usa el código <strong>SYNKRO15</strong> en tu carrito &nbsp;·&nbsp; 🔥 15% de descuento en toda la tienda · Usa el código <strong>SYNKRO15</strong> en tu carrito &nbsp;·&nbsp; 🔥 15% de descuento en toda la tienda · Usa el código <strong>SYNKRO15</strong> en tu carrito &nbsp;·&nbsp; </span>
+    <span aria-hidden="true">🔥 15% de descuento en toda la tienda · Usa el código <strong>SYNKRO15</strong> en tu carrito &nbsp;·&nbsp; 🔥 15% de descuento en toda la tienda · Usa el código <strong>SYNKRO15</strong> en tu carrito &nbsp;·&nbsp; 🔥 15% de descuento en toda la tienda · Usa el código <strong>SYNKRO15</strong> en tu carrito &nbsp;·&nbsp; 🔥 15% de descuento en toda la tienda · Usa el código <strong>SYNKRO15</strong> en tu carrito &nbsp;·&nbsp; </span>
+  </div>
+</div>
+
 <div class="grid-bg"></div>
 <canvas id="particles"></canvas>
 
@@ -336,6 +344,10 @@
       </div>
       <div id="as-promo-msg" class="as-promo-msg"></div>
     </div>
+    <div class="as-cart-saving-row" id="as-cart-saving">
+      <span class="as-cart-saving-label">Descuento SYNKRO15</span>
+      <span class="as-cart-saving-amount" id="as-cart-saving-amt">-€0.00</span>
+    </div>
     <div class="as-cart-total-row">
       <span class="as-cart-total-label">TOTAL</span>
       <span class="as-cart-total-num" id="as-cart-total">€0.00</span>
@@ -545,3 +557,14 @@
     </div>
   </div>
 </footer>
+
+<!-- COOKIE BANNER -->
+<div class="as-cookie-banner" id="as-cookie-banner">
+  <div class="as-cookie-inner">
+    <p>Usamos <strong>cookies</strong> para mejorar tu experiencia de navegación y analizar el tráfico de la web. Puedes aceptarlas o rechazarlas. <a href="#" onclick="showPage('privacidad');document.getElementById('as-cookie-banner').classList.remove('show');return false;" style="color:var(--primary)">Más información</a></p>
+    <div class="as-cookie-btns">
+      <button class="as-cookie-accept" onclick="asCookieAccept()">Aceptar</button>
+      <button class="as-cookie-reject" onclick="asCookieReject()">Rechazar</button>
+    </div>
+  </div>
+</div>
