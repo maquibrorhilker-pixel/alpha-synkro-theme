@@ -19,14 +19,14 @@
     .as-nav{position:fixed;top:36px;width:100%;z-index:1000;background:rgba(10,10,15,0.95);
       backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,245,255,0.12);}
     .as-nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;
-      height:68px;padding:0 2rem;gap:1.5rem;}
+      height:84px;padding:0 2rem;gap:1.5rem;}
     .as-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex-shrink:0;}
     .as-logo img{
-      filter:drop-shadow(0 0 8px rgba(0,245,255,0.6)) drop-shadow(0 0 22px rgba(0,102,255,0.4));
+      filter:brightness(1.15) contrast(1.1) drop-shadow(0 0 8px rgba(0,245,255,0.55)) drop-shadow(0 0 20px rgba(0,102,255,0.35));
       animation:asLogoBreath 4s ease-in-out infinite;}
     @keyframes asLogoBreath{
-      0%,100%{filter:drop-shadow(0 0 8px rgba(0,245,255,0.6)) drop-shadow(0 0 22px rgba(0,102,255,0.4));}
-      50%{filter:drop-shadow(0 0 14px rgba(0,245,255,1)) drop-shadow(0 0 32px rgba(0,102,255,0.7));}
+      0%,100%{filter:brightness(1.15) contrast(1.1) drop-shadow(0 0 8px rgba(0,245,255,0.55)) drop-shadow(0 0 20px rgba(0,102,255,0.35));}
+      50%{filter:brightness(1.25) contrast(1.1) drop-shadow(0 0 14px rgba(0,245,255,0.95)) drop-shadow(0 0 30px rgba(0,102,255,0.65));}
     }
     .as-logo-text{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.2rem;
       background:linear-gradient(90deg,var(--primary),var(--accent));
@@ -51,7 +51,7 @@
 
     /* HERO */
     .as-hero{position:relative;min-height:100vh;display:flex;align-items:center;
-      padding:126px 2rem 4rem;z-index:1;overflow:hidden;}
+      padding:142px 2rem 4rem;z-index:1;overflow:hidden;}
     .as-hero-bg{position:absolute;inset:0;
       background:radial-gradient(ellipse at 65% 50%,rgba(0,102,255,0.18)0%,transparent 60%),
       radial-gradient(ellipse at 25% 70%,rgba(0,245,255,0.1)0%,transparent 50%);}
