@@ -1,4 +1,4 @@
-// ── PARTICLES ──────────────────────────────────────────
+﻿// ── PARTICLES ──────────────────────────────────────────
 (()=>{
   const c=document.getElementById('particles'),ctx=c.getContext('2d');
   const resize=()=>{c.width=innerWidth;c.height=innerHeight;};
@@ -224,11 +224,15 @@ function asGoCheckout(){
   showPage('checkout');
 }
 
+const CK_FREE_SHIPPING_THRESHOLD = 100;
+const CK_SHIPPING_COST = 4.99;
+
 function ckRenderSummary(){
   const list = document.getElementById('ck-items-list');
   const subtotal = asCartItems.reduce((s,i)=>s+i.price*i.qty,0);
+  const shipping = subtotal >= CK_FREE_SHIPPING_THRESHOLD ? 0 : CK_SHIPPING_COST;
   const tax = subtotal * 0.21;
-  const total = subtotal + tax;
+  const total = subtotal + shipping + tax;
 
   list.innerHTML = asCartItems.map(it=>`
     <div class="ck-item">
@@ -245,6 +249,32 @@ function ckRenderSummary(){
   document.getElementById('ck-tax').textContent = fmt(tax);
   document.getElementById('ck-total-final').textContent = fmt(total);
   document.getElementById('ck-btn-total').textContent = fmt(total);
+
+  // Shipping label
+  const lbl = document.getElementById('ck-shipping-label');
+  if(lbl) {
+    if(shipping === 0){
+      lbl.innerHTML = '<span style="color:#00cc66;font-weight:700;letter-spacing:.5px;">GRATIS</span>';
+    } else {
+      lbl.innerHTML = '<span style="color:var(--text);">'+fmt(shipping)+'</span>';
+    }
+  }
+
+  // Shipping progress banner
+  const msg  = document.getElementById('ck-ship-msg');
+  const fill = document.getElementById('ck-ship-fill');
+  if(msg && fill){
+    const pct = Math.min(100, (subtotal / CK_FREE_SHIPPING_THRESHOLD) * 100);
+    fill.style.width = pct + '%';
+    if(shipping === 0){
+      msg.className = 'ck-ship-msg ck-ship-free';
+      msg.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> ¡Envío gratuito aplicado a tu pedido!';
+    } else {
+      const rem = fmt(CK_FREE_SHIPPING_THRESHOLD - subtotal);
+      msg.className = 'ck-ship-msg ck-ship-pending';
+      msg.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Añade <strong>'+rem+'</strong> más para envío gratis';
+    }
+  }
 }
 
 function ckSetPm(label, type){
