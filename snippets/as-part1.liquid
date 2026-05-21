@@ -172,10 +172,10 @@
   </div>
   <div class="pm-body">
     <div class="pm-gallery">
-      <img class="pm-gallery-main" id="pm-Apex Pro-main" src="{{ 'apex_main.jpg' | asset_url }}" alt="Apex Pro">
+      <img class="pm-gallery-main" id="pm-Apex Pro-main" src="{{ 'apex_2.jpg' | asset_url }}" alt="Apex Pro">
       <div class="pm-thumbs">
-        <img class="pm-thumb active" src="{{ 'apex_main.jpg' | asset_url }}"     onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
-        <img class="pm-thumb"        src="{{ 'apex_2.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
+        <img class="pm-thumb active" src="{{ 'apex_2.jpg' | asset_url }}"        onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'apex_main.jpg' | asset_url }}"     onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
         <img class="pm-thumb"        src="{{ 'apex_3.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
         <img class="pm-thumb"        src="{{ 'apex_4.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
         <img class="pm-thumb"        src="{{ 'apex_5.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Apex Pro-main')" alt="">
@@ -298,7 +298,7 @@
       <input class="pm-qty-input" id="pm-qty-apex" type="number" value="1" min="1" max="99">
       <button class="pm-qty-btn" onclick="pmQty('pm-qty-apex',1)">+</button>
     </div>
-    <button class="as-btn-primary" onclick="asAddToCartDemo('Apex Pro','449.00','{{ 'apex_main.jpg' | asset_url }}',null,document.getElementById('pm-qty-apex').value);pmClose();">
+    <button class="as-btn-primary" onclick="asAddToCartDemo('Apex Pro','449.00','{{ 'apex_2.jpg' | asset_url }}',null,document.getElementById('pm-qty-apex').value);pmClose();">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
       Añadir al carrito
     </button>
@@ -320,9 +320,12 @@
     <div class="pm-gallery">
       <img class="pm-gallery-main" id="pm-Solaris-main" src="{{ 'sol_main.jpg' | asset_url }}" alt="Solaris">
       <div class="pm-thumbs">
-        <img class="pm-thumb active" src="{{ 'sol_main.jpg' | asset_url }}"    onclick="pmThumb(this,'pm-Solaris-main')" alt="">
-        <img class="pm-thumb"        src="{{ 'sol_2.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Solaris-main')" alt="">
-        <img class="pm-thumb"        src="{{ 'sol_3.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Solaris-main')" alt="">
+        <img class="pm-thumb active" src="{{ 'sol_main.jpg' | asset_url }}"   onclick="pmThumb(this,'pm-Solaris-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'sol_pool1.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Solaris-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'sol_pool2.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Solaris-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'sol_pool3.jpg' | asset_url }}"  onclick="pmThumb(this,'pm-Solaris-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'sol_2.jpg' | asset_url }}"      onclick="pmThumb(this,'pm-Solaris-main')" alt="">
+        <img class="pm-thumb"        src="{{ 'sol_3.jpg' | asset_url }}"      onclick="pmThumb(this,'pm-Solaris-main')" alt="">
       </div>
     </div>
     <div class="pm-right">
@@ -332,7 +335,7 @@
       <div class="pm-intro">El Solaris es el único skimmer robótico que busca activamente la luz solar mientras se mueve, permitiendo una operación genuina 24/7. Hojas, polvo, polen, pelo de mascotas, insectos y residuos flotantes desaparecen solos — sin intervención, sin coste eléctrico.</div>
 
       <div class="pm-feature">
-        <img class="pm-feature-img" src="{{ 'sol_main.jpg' | asset_url }}" alt="Carga dual solar">
+        <img class="pm-feature-img" src="{{ 'sol_pool1.jpg' | asset_url }}" alt="Carga dual solar">
         <div class="pm-feature-text">
           <div class="pm-feat-num">01 / USP</div>
           <div class="pm-feat-title">Carga Dual Solar + DC · Siempre listo</div>
@@ -342,7 +345,7 @@
       </div>
 
       <div class="pm-feature reverse">
-        <img class="pm-feature-img" src="{{ 'sol_2.jpg' | asset_url }}" alt="Filtro 6L 180µm">
+        <img class="pm-feature-img" src="{{ 'sol_pool2.jpg' | asset_url }}" alt="Filtro 6L 180µm">
         <div class="pm-feature-text">
           <div class="pm-feat-num">02 / USP</div>
           <div class="pm-feat-title">Filtro ultra-fino 180µm · Cesta 6L</div>
@@ -352,7 +355,7 @@
       </div>
 
       <div class="pm-feature">
-        <img class="pm-feature-img" src="{{ 'sol_3.jpg' | asset_url }}" alt="App control total">
+        <img class="pm-feature-img" src="{{ 'sol_pool3.jpg' | asset_url }}" alt="App control total">
         <div class="pm-feature-text">
           <div class="pm-feat-num">03 / USP</div>
           <div class="pm-feat-title">Control total por app · Triple motor</div>
