@@ -564,6 +564,18 @@
     .ck-item-qty{font-size:.72rem;color:var(--text-dim);margin-top:.2rem;}
     .ck-item-price{font-family:'Orbitron',sans-serif;font-size:.88rem;color:var(--primary);
       font-weight:700;white-space:nowrap;}
+    /* Shipping banner */
+    .ck-ship-banner{background:rgba(0,245,255,0.04);border:1px solid rgba(0,245,255,0.12);
+      border-radius:8px;padding:.9rem 1rem 1rem;margin-bottom:1rem;}
+    .ck-ship-track{height:5px;background:rgba(255,255,255,0.07);border-radius:99px;overflow:hidden;margin-bottom:.65rem;}
+    .ck-ship-fill{height:100%;border-radius:99px;
+      background:linear-gradient(90deg,var(--accent),var(--primary));
+      transition:width .6s cubic-bezier(.4,0,.2,1);}
+    .ck-ship-msg{font-size:.78rem;display:flex;align-items:center;gap:.45rem;line-height:1.4;}
+    .ck-ship-msg svg{flex-shrink:0;}
+    .ck-ship-msg.ck-ship-free{color:#00cc66;}
+    .ck-ship-msg.ck-ship-pending{color:var(--text-dim);}
+    .ck-ship-msg strong{color:var(--text);}
     .ck-totals{margin-top:1rem;border-top:1px solid rgba(0,245,255,0.08);padding-top:1rem;}
     .ck-total-row{display:flex;justify-content:space-between;font-size:.82rem;
       padding:.4rem 0;color:var(--text-dim);}
