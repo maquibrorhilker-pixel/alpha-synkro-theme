@@ -20,41 +20,14 @@
       backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,245,255,0.12);}
     .as-nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;
       height:68px;padding:0 2rem;gap:1.5rem;}
-    .as-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex-shrink:0;position:relative;overflow:visible;}
-    .as-logo img{position:relative;z-index:1;
-      filter:drop-shadow(0 0 7px rgba(0,245,255,0.55)) drop-shadow(0 0 18px rgba(0,102,255,0.35));
+    .as-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex-shrink:0;}
+    .as-logo img{
+      filter:drop-shadow(0 0 8px rgba(0,245,255,0.6)) drop-shadow(0 0 22px rgba(0,102,255,0.4));
       animation:asLogoBreath 4s ease-in-out infinite;}
-    .as-logo::before{content:'';position:absolute;width:3px;height:3px;border-radius:50%;
-      background:transparent;pointer-events:none;z-index:2;top:50%;left:21px;
-      box-shadow:
-        -24px -18px 0 1.5px rgba(0,245,255,0.95),
-         20px -20px 0 1px   rgba(0,245,255,0.75),
-        -32px  4px  0 2px   rgba(0,102,255,0.85),
-         28px  6px  0 1.5px rgba(0,245,255,0.65),
-        -16px  22px 0 1px   rgba(0,102,255,0.7),
-         22px  18px 0 2px   rgba(0,245,255,0.8),
-         -8px -28px 0 1.5px rgba(0,245,255,0.9),
-         34px -10px 0 1px   rgba(0,102,255,0.6),
-        -36px  14px 0 1px   rgba(0,245,255,0.5),
-         10px  30px 0 1.5px rgba(0,102,255,0.55);
-      animation:asSparkle1 2.6s ease-in-out infinite;}
-    .as-logo::after{content:'';position:absolute;width:3px;height:3px;border-radius:50%;
-      background:transparent;pointer-events:none;z-index:2;top:50%;left:21px;
-      box-shadow:
-         14px -24px 0 1px   rgba(0,245,255,0.7),
-        -20px -10px 0 2px   rgba(0,102,255,0.8),
-         30px  14px 0 1px   rgba(0,245,255,0.6),
-        -28px  20px 0 1.5px rgba(0,245,255,0.85),
-         18px -14px 0 1.5px rgba(0,102,255,0.65),
-        -12px  28px 0 1px   rgba(0,245,255,0.75),
-         36px  -4px 0 2px   rgba(0,245,255,0.5),
-        -38px  -6px 0 1px   rgba(0,102,255,0.55),
-          4px  32px 0 1.5px rgba(0,245,255,0.6),
-        -18px -26px 0 1px   rgba(0,102,255,0.7);
-      animation:asSparkle2 3.1s ease-in-out infinite;}
-    @keyframes asLogoBreath{0%,100%{filter:drop-shadow(0 0 7px rgba(0,245,255,0.55)) drop-shadow(0 0 18px rgba(0,102,255,0.35));}50%{filter:drop-shadow(0 0 12px rgba(0,245,255,0.9)) drop-shadow(0 0 28px rgba(0,102,255,0.6));}}
-    @keyframes asSparkle1{0%{opacity:1;transform:scale(1);}40%{opacity:.15;transform:scale(.5);}70%{opacity:.8;transform:scale(.85);}100%{opacity:1;transform:scale(1);}}
-    @keyframes asSparkle2{0%{opacity:.3;transform:scale(.6);}50%{opacity:1;transform:scale(1);}80%{opacity:.4;transform:scale(.7);}100%{opacity:.3;transform:scale(.6);}}
+    @keyframes asLogoBreath{
+      0%,100%{filter:drop-shadow(0 0 8px rgba(0,245,255,0.6)) drop-shadow(0 0 22px rgba(0,102,255,0.4));}
+      50%{filter:drop-shadow(0 0 14px rgba(0,245,255,1)) drop-shadow(0 0 32px rgba(0,102,255,0.7));}
+    }
     .as-logo-text{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.2rem;
       background:linear-gradient(90deg,var(--primary),var(--accent));
       -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
