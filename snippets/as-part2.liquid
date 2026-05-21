@@ -1,4 +1,4 @@
-</div><!-- /#page-home -->
+﻿</div><!-- /#page-home -->
 
 <!-- ══════════════ PAGE: ROBOTS ══════════════ -->
 <div id="page-robots" style="padding-top:68px;">
@@ -293,6 +293,14 @@
         <div class="ck-summary">
           <div class="ck-summary-title">// RESUMEN DEL PEDIDO</div>
           <div id="ck-items-list"></div>
+          <!-- Shipping progress banner -->
+          <div class="ck-ship-banner" id="ck-ship-banner">
+            <div class="ck-ship-track">
+              <div class="ck-ship-fill" id="ck-ship-fill"></div>
+            </div>
+            <div class="ck-ship-msg" id="ck-ship-msg"></div>
+          </div>
+
           <div class="ck-totals">
             <div class="ck-total-row">
               <span>Subtotal</span>
@@ -300,7 +308,7 @@
             </div>
             <div class="ck-total-row">
               <span>Envío</span>
-              <span style="color:#00cc66;font-weight:600;">GRATIS</span>
+              <span id="ck-shipping-label" style="color:#00cc66;font-weight:600;">GRATIS</span>
             </div>
             <div class="ck-total-row">
               <span>IVA (21%)</span>
