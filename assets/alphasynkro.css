@@ -669,7 +669,7 @@
     @media(max-width:640px){
       .as-mobile-cta{
         display:flex;align-items:center;justify-content:space-between;
-        position:fixed;top:calc(36px + 56px);left:0;right:0;z-index:999;
+        position:fixed;top:calc(36px + 84px);left:0;right:0;z-index:999;
         background:linear-gradient(90deg,#0d1b3e 0%,#0a1628 100%);
         border-bottom:1px solid rgba(0,245,255,0.18);
         padding:.55rem 1rem .55rem 1.1rem;gap:.8rem;
