@@ -133,19 +133,6 @@ function asCloseCart(){
   document.getElementById('as-cart-overlay').classList.remove('open');
 }
 
-// ── COUNTDOWN ───────────────────────────────────────────
-(()=>{
-  const target=new Date(Date.now()+2*86400000+18*3600000);
-  const up=()=>{
-    const diff=target-Date.now();if(diff<=0)return;
-    const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),
-          m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
-    document.getElementById('as-cd-d').textContent=String(d).padStart(2,'0');
-    document.getElementById('as-cd-h').textContent=String(h).padStart(2,'0');
-    document.getElementById('as-cd-m').textContent=String(m).padStart(2,'0');
-    document.getElementById('as-cd-s').textContent=String(s).padStart(2,'0');
-  };up();setInterval(up,1000);
-})();
 
 // ── TOAST ────────────────────────────────────────────────
 let asToastTimer;
